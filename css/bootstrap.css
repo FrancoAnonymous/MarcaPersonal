@@ -34,7 +34,58 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+.loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: rgb(131, 131, 131);
+  width: 100%;
+  height: 100%;
+}
+.loader_letter{
+  font-size: 40px;
+  width: 300px;
+  position: absolute;
+  top:80%;
+  left:-18%;
 
+}
+.loader{
+  border: 0 solid transparent;
+  border-radius:  50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+.loader:before, .loder:after{
+  content:'';
+  border: 1em solid #000000;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+.loader:before{
+  animation-delay: .5s;
+}
+@keyframes loader{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0;
+  }
+}
 *,
 *::before,
 *::after {
@@ -4692,19 +4743,26 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-brand {
-  color: #fff;
+  color: #000;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #fff;
+  color: rgb(156, 156, 156);
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-weight: bold;
+  color: #000
+
 }
 
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgb(156, 156, 156);
 }
 
 .navbar-dark .navbar-nav .nav-link.disabled {
@@ -6443,6 +6501,12 @@ a.close.disabled {
   overflow: hidden;
 }
 
+.carousel img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .carousel-inner::after {
   display: block;
   clear: both;
@@ -6450,16 +6514,12 @@ a.close.disabled {
 }
 
 .carousel-item {
-  position: relative;
+  height: 100vh;
+  min-height: 300px;
   display: none;
-  float: left;
-  width: 100%;
-  margin-right: -100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition: -webkit-transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  background: no-repeat center center scroll;
+  -webkit-background-size:cover;
+  background-size:cover;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6560,8 +6620,8 @@ a.close.disabled {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   background: no-repeat 50% / 100% 100%;
 }
 
@@ -6620,13 +6680,25 @@ a.close.disabled {
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 20px;
+  bottom: 30%;
   left: 15%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
+}
+.carousel-caption h5{
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+.carousel-caption p{
+  font-size: 18px;
+  margin:auto;
+  width: 75%;
+  line-height: 1.9;;
 }
 
 @-webkit-keyframes spinner-border {
@@ -6797,7 +6869,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #fff !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -6807,7 +6879,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.4)
 }
 
 .bg-transparent {
@@ -10274,5 +10346,6 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+  
 }
 /*# sourceMappingURL=bootstrap.css.map */
