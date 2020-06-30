@@ -35,6 +35,27 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.social-item img{
+  width: 40px;
+}
+.social-icon img{
+  width: 30px;
+}
+.social-text{
+  font-size: 15px;
+  padding-left: 10px;
+  width: 50px;
+}
+.text-legal{
+  text-decoration-color: black;
+}
+.legal{
+  text-align: center;
+}
+.legal a{
+  color: black;
+}
+
 .loader_bg{
   position: fixed;
   z-index: 999999;
@@ -87,26 +108,7 @@
     opacity: 0;
   }
 }
-.social-item img{
-  width: 40px;
-}
-.social-icon img{
-  width: 30px;
-}
-.social-text{
-  font-size: 15px;
-  padding-left: 10px;
-  width: 50px;
-}
-.text-legal{
-  text-decoration-color: black;
-}
-.legal{
-  text-align: center;
-}
-.legal a{
-  color: black;
-}
+
 footer {
   background-color: #949494;
 }
