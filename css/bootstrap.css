@@ -87,9 +87,6 @@
     opacity: 0;
   }
 }
-footer {
-  background-color: #949494;
-}
 .social-item img{
   width: 40px;
 }
@@ -110,6 +107,10 @@ footer {
 .legal a{
   color: black;
 }
+footer {
+  background-color: #949494;
+}
+
 .trabajos{
   width: 100%;
   background-color: black;
